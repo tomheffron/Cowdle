@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Cow Breed Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="banner">
+        <div class="banner-content">
+            <span class="emoji">🐮</span>
+            <h1 class="banner-title">COWDLE</h1>
+        </div>
+    </header>
+    <div class="game-container">
+        <h2 class="subtitle">Can you identify the breed of this cow?</h2>
+        <div class="gallery">
+            <button id="prevImage" class="nav-button">&#10094;</button>
+            <img id="cowImage" src="cows/holstein.jpg" alt="Cow image" />
+            <button id="nextImage" class="nav-button">&#10095;</button>
+        </div>
+        <input type="text" id="guess" placeholder="Enter your guess" />
+        <div id="suggestions" class="suggestions"></div>
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+        <div id="incorrectGuesses" class="incorrect-guesses"></div>
+    </div>
+
+    <!-- Include JavaScript file -->
+    <script src="script.js"></script>
+    <div id="popup" class="popup">Correct!</div>
+</body>
+</html>
