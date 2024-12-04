@@ -178,3 +178,22 @@ document.getElementById('prevImage').addEventListener('click', showPrevImage);
 
 // Initial image set when the page loads
 setRandomBreed();
+
+// Show the information popup
+document.getElementById("infoButton").addEventListener("click", function () {
+    document.getElementById("infoPopup").style.display = "block";
+});
+
+// Close the information popup
+document.getElementById("closeInfo").addEventListener("click", function () {
+    document.getElementById("infoPopup").style.display = "none";
+});
+
+// Optional: Close the popup when clicking outside of it
+window.addEventListener("click", function (event) {
+    const infoPopup = document.getElementById("infoPopup");
+    if (event.target === infoPopup) {
+        infoPopup.style.display = "none";
+    }
+});
+

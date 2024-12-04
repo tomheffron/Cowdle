@@ -212,5 +212,63 @@ button:hover {
 }
 
 
+/* Info Button */
+.info-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    /* background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc; */
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
+.info-button:hover {
+    background-color: #f0f0f0;
+}
 
+/* Info Popup */
+#infoPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #333; /* Ensure text is visible */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Popup Content */
+.info-popup-content {
+    position: relative;
+}
+
+/* Close Button */
+.close-info {
+    display: block;
+    margin: 20px auto 0; /* Center the button horizontally and add spacing */
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.close-info:hover {
+    background-color: darkred;
+}
