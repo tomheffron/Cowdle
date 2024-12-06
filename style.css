@@ -272,3 +272,43 @@ button:hover {
 .close-info:hover {
     background-color: darkred;
 }
+
+.hint-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+    margin-left: 1em; /* Adds spacing between the submit button and the hint button */
+    font-size: 1.5em; /* Adjust size */
+    color: white; /* Ensures the lightbulb icon matches the theme */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hint-button:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: yellow; /* Highlight the lightbulb in yellow when hovered */
+}
+
+.button-group {
+    display: flex;
+    justify-content: start; /* Align buttons to the left */
+    gap: 10px; /* Add spacing between buttons */
+    margin-top: 10px; /* Add spacing above the buttons */
+}
+.button-group button {
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.button-group {
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+
+header.banner {
+    margin-bottom: 0; /* Adjust this to reduce space between the header and the content */
+}
+
+.game-container {
+    margin-top: -40px; /* Use a negative margin to bring it up, adjust as needed */
+}

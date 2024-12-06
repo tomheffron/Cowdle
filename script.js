@@ -44,6 +44,8 @@ let currentImageIndex = 0; // Index to keep track of the current image
 let currentImageArray = []; // Array of images for the current breed
 let incorrectGuesses = []; // Array to store incorrect guesses
 
+
+
 // Function to set a random breed and change the image
 function setRandomBreed() {
     const breeds = Object.keys(cowBreeds);
@@ -129,6 +131,34 @@ function showPopup(message, backgroundColor) {
     }, 3000); // Matches the animation duration
 }
 
+// Function to reveal the first letter of the current breed as a hint
+document.getElementById('hintButton').addEventListener('click', function() {
+    const firstLetter = currentBreed.charAt(0).toUpperCase();
+    const guessInput = document.getElementById('guess');
+
+    // If the input field is empty, set the first letter as its value
+    if (guessInput.value === '') {
+        guessInput.value = firstLetter;
+        guessInput.setAttribute('readonly', true); // Make it read-only to prevent the first letter from being erased
+
+        // Use a setTimeout to wait for the event loop to complete and then remove readonly
+        setTimeout(() => {
+            guessInput.removeAttribute('readonly');
+        }, 10);
+    }
+});
+
+// Function to prevent backspace on the hinted letter
+document.getElementById('guess').addEventListener('input', function() {
+    const guessInput = document.getElementById('guess');
+    const firstLetter = currentBreed.charAt(0).toUpperCase();
+
+    // If the user tries to delete the first letter, prevent it
+    if (guessInput.value.charAt(0) !== firstLetter) {
+        guessInput.value = firstLetter + guessInput.value.substring(1);
+    }
+});
+
 
 
 // Add an event listener to the input field to trigger the "submit" button on Enter key press
@@ -196,4 +226,8 @@ window.addEventListener("click", function (event) {
         infoPopup.style.display = "none";
     }
 });
+
+
+
+
 
